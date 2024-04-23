@@ -3,31 +3,105 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
+}
+
+.html {
+	scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+	/* Customize the scrollbar width */
+
+	display: none;
+}
+
+::-webkit-scrollbar-track {
+	/* Customize the scrollbar track */
+	display: none;
+}
+
+::-webkit-scrollbar-thumb {
+	/* Customize the scrollbar thumb */
+	display: none;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	cursor: none;
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(
+			to bottom,
+			transparent,
+			rgb(var(--background-end-rgb))
+		)
+		rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+	.text-balance {
+		text-wrap: balance;
+	}
+}
+
+.mouse-pointer {
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	transform: translate3d(-50%, -50%, 0);
+	z-index: 8;
+	pointer-events: none;
+}
+.mouse-outline {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 2px solid #979868;
+	/* background: #979868; */
+	position: fixed;
+	top: 0;
+	left: 0;
+	transform: translate3d(-50%, -50%, 0);
+	z-index: 5;
+	pointer-events: none;
+	transition: all 100ms;
+	/* transition: all 300ms 200ms; */
+}
+
+/* -webkit-text-fill-color: white; */
+/* Will override color (regardless of order) */
+
+.text-stroke {
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #979868;
+	opacity: 0.1;
+}
+
+.mask {
+	-webkit-mask-image: url("/mask.svg");
+	mask-image: url("/mask.svg");
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	position: absolute;
+	left: 0;
+	top: 0;
+	mask-size: 30px;
+	mask-position: 50% 20%;
+	pointer-events: none;
+	mask-border-width: 1rem;
+	transition: all 100ms;
+	pointer-events: none;
 }
