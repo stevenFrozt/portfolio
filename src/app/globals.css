@@ -16,7 +16,7 @@
 	}
 }
 
-.html {
+html {
 	scroll-behavior: smooth;
 }
 
@@ -104,4 +104,7 @@ body {
 	mask-border-width: 1rem;
 	/* transition: all 100ms; */
 	pointer-events: none;
+}
+
+.transform-3d {
 }
