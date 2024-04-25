@@ -1,4 +1,5 @@
 "use client"
+import ScrollToTop from "@/components/ScrollToTop"
 import AboutView from "@/views/index/about/aboutView"
 import Intro from "@/views/index/intro/Intro"
 import LandingView from "@/views/index/landing/landingView"
@@ -11,6 +12,7 @@ export default function Home() {
 			<LandingView />
 			<AboutView />
 			<MasteryView />
+			<ScrollToTop />
 		</>
 	)
 }

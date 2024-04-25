@@ -1,4 +1,6 @@
+import DivMask from "@/components/ui/mask/divMask"
 import useMousePosition from "@/hooks/useMousePosition"
+import { useHoverStore } from "@/store/store"
 import Image from "next/image"
 import React, { useEffect, useRef } from "react"
 
@@ -24,6 +26,7 @@ export default function AboutView() {
 			selected.animate(keyframes, options)
 		}
 	}, [x, y])
+	const { mouseEnter, mouseLeave } = useHoverStore()
 	return (
 		<div className="relative pt-20 pb-20 min-h-screen text-custom-light overflow-hidden">
 			<h1 className="py-2 font-bold text-6xl text-center">
@@ -40,6 +43,7 @@ export default function AboutView() {
 					<div className="relative w-full h-[25rem] transition-all duration-100 -rotate-2">
 						<div className="top-1/2 left-1/2 absolute border-custom-light/40 border rounded-xl w-[25rem] h-[25rem] -translate-x-1/2 -translate-y-1/2 -rotate-6"></div>
 						<div className="top-1/2 left-1/2 absolute border-custom-light/40 border rounded-xl w-[25rem] h-[25rem] -translate-x-1/2 -translate-y-1/2 -rotate-12"></div>
+
 						<Image
 							src={"/avatar1.png"}
 							alt="avatar"
