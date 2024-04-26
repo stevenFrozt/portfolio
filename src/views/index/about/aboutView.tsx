@@ -9,7 +9,8 @@ export default function AboutView() {
 	const { x, y } = useMousePosition()
 	useEffect(() => {
 		const selected = targetRef.current
-		if (selected) {
+
+		if (selected && window.screen.width > 768) {
 			const test = x / selected.offsetWidth
 			const test2 = y / selected.offsetHeight
 			const keyframes = {
@@ -52,7 +53,7 @@ export default function AboutView() {
 						/>
 					</div>
 					<div
-						className="space-y-4 bg-white/10 p-4 rounded-xl w-full text-lg transform-3d transform-gpu"
+						className="space-y-4 bg-white/10 mt-8 md:mt-0 ml-0 md:ml-10 p-4 rounded-xl w-full lg:text-lg transform-3d transform-gpu rotate-0"
 						ref={targetRef}
 					>
 						<p>
